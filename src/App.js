@@ -1,8 +1,15 @@
 import React from 'react';
+import './SearchBar';
+import './Card';
 
 const App = () => {
     return (
-        <h1>Hello, Rias!</h1>
+        <>
+            <SearchBar />
+            <Card />
+            <h1>Hello, React!</h1>
+        </>
+        
     )
 }
 
