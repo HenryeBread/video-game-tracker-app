@@ -1,7 +1,10 @@
-import './GameInfo';
+import {GameInfo} from './GameInfo';
 
-const Card = () => {
+export function Card(){
     return (
-        null
+        <>
+            <img />
+            <GameInfo />
+        </>
     );
 }

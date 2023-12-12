@@ -1,6 +1,7 @@
 import React from 'react';
-import './SearchBar';
-import './Card';
+import {SearchBar} from './SearchBar';
+import {Card} from './Card';
+import './App.css';
 
 const App = () => {
     return (
