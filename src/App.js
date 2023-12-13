@@ -6,9 +6,12 @@ import './App.css';
 const App = () => {
     return (
         <>
-            <SearchBar />
-            <Card />
-            <h1>Hello, React!</h1>
+            <body>
+                <SearchBar />
+                <Card />
+                <h1>Hello, React!</h1>
+            </body>
+            
         </>
         
     )

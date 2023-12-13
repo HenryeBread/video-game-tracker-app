@@ -1,9 +1,44 @@
-.form-field {
-    position: relative;
-    display: inline-block;
+* {
+  margin: 0;
+  padding: 0
 }
 
-icon {
-  position: absolute;
-  right: 0;
+body {
+  background-color: #353f44;
 }
+
+.form-field {
+  margin: auto;
+  width: 30%;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: whitesmoke;
+}
+
+
+input[type="text"] {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 15px;
+  width: 95%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.search-icon {
+  color: gray;
+  background: transparent;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 15px;
+  height: 25px;
+}
+
