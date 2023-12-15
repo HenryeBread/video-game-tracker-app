@@ -9,7 +9,7 @@ const App = () => {
             <body>
                 <SearchBar />
                 <Card />
-                <h1>Hello, React!</h1>
+                <h1>Placeholder</h1>
             </body>
             
         </>

@@ -10,12 +10,14 @@ export function SearchBar() {
         <>
         <div className="form-field">
             <label htmlFor="item"></label>
+            {/* Search Bar input field */}
             <input type="text"
              id="item"
              value={item}
              onChange={e => getItem(e.target.value)}
              placeholder="Search.."
             />
+            {/* Magnifying Glass Icon */}
             <button className="search-icon">
                 <FontAwesomeIcon icon={faMagnifyingGlass}/>
             </button>
