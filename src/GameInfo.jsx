@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const url = 'https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D';
 const options = {
 	method: 'GET',
@@ -13,6 +15,10 @@ try {
 	console.log(result);
 } catch (error) {
 	console.error(error);
+}
+
+{
+
 }
 
 export function GameInfo() {
