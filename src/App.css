@@ -5,6 +5,7 @@
 
 body {
   background-color: #353f44;
+  
 }
 
 .form-field {
@@ -40,5 +41,10 @@ h1 {
   cursor: pointer;
   width: 15px;
   height: 25px;
+}
+
+.card {
+  
+
 }
 
