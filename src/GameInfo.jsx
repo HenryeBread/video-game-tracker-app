@@ -1,31 +1,48 @@
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const url = 'https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '8c2cbae682msh356997b1003e947p19d0d8jsneb481601efb1',
-		'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com'
-	}
+
+export function GameInfo () {
+  const [games, setGames] = useState([]);
+  const apiKey = 'f418a7f4c04b49ad96091a74dcfe31d4'; 
+
+  useEffect(() => {
+    const fetchPopularGames = async () => {
+      try {
+        const response = await axios.get('https://api.rawg.io/api/games', {
+          params: {
+            key: apiKey,
+            ordering: '-added',
+          },
+        });
+
+        if (response.data.results) {
+          setGames(response.data.results);
+        } else {
+          throw new Error('Failed to fetch data from Rawg API');
+        }
+
+      } catch (error) {
+        console.error('Error fetching data:', error.message);
+      }
+    };
+
+    fetchPopularGames();
+  }, [apiKey]);
+
+  return (
+    <div>
+      <h1>Popular Games</h1>
+      <ul>
+        {games.map((game, index) => (
+          <li key={index}>
+			<img src={game.background_image} alt={game.name} style={{ width: '100px', height: '100px', marginRight: '10px' }} />
+            <strong>{game.name}</strong> - Released: {game.released}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
-
-{
-
-}
-
-export function GameInfo() {
-    return (
-        <>
-            <h1 id="game-title">Placeholder</h1>
-            <p id="release-year">Placeholder</p>
-        </>
-    );
-}
+export default GameInfo;
